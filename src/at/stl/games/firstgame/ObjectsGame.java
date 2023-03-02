@@ -23,17 +23,17 @@ public class ObjectsGame extends BasicGame {
         this.actors = new LinkedList<>();
 
         Random random = new Random();
-        for (int i = 0; i < 100; i++) {
-            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+        for (int i = 0; i < 10; i++) {
+            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), Rectangle.Direction.Left);
             actors.add(rectangle);
         }
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             Circle circle = new Circle();
             this.actors.add(circle);
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             Ellipse ellipse = new Ellipse(random.nextInt(800),random.nextInt(600));
             this.actors.add(ellipse);
         }

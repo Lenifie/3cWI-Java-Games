@@ -7,11 +7,14 @@ public class Rectangle implements Actor{
     private float x;
     private float y;
     private  float speed;
+    public enum Direction{Left,Right};
+    private Direction direction;
 
-    public Rectangle(float x, float y, float speed){
+    public Rectangle(float x, float y, float speed, Direction direction){
         this.x = x;
         this.y = y;
         this.speed = speed;
+        this.direction = direction;
     }
 
 
@@ -20,10 +23,16 @@ public class Rectangle implements Actor{
     }
 
     public void update(int delta){
-        this.x += (float)delta/this.speed;
-        if(this.x>800){
-            this.x = 0;
+        if(this.direction == direction.Left){
+            this.x -= (float)delta/2.0;
+
+        }else {
+            this.x += (float)delta/this.speed;
+            if(this.x>0){
+                this.x = 800;
+            }
         }
+
     }
 }
 

@@ -14,7 +14,7 @@ public class Circle implements Actor{
         Random random = new Random();
         this.x = random.nextInt(800);
         this.y = random.nextInt(600);
-        this.speed = random.nextInt(40) + 10;
+        this.speed = 2;
         this.diameter = random.nextInt(20)+20;
     }
 
@@ -24,9 +24,16 @@ public class Circle implements Actor{
     }
 
     public void update(int delta){
-        this.y += (float)delta/this.speed;
-        if(this.y>600){
+        this.x += (float)delta/this.speed;
+        if(this.x>800){
             this.x = 0;
         }
+
+        this.y += (float)delta/this.speed;
+        if(this.y>600){
+            this.y = 0;
+        }
+
+        this.diameter += (float)delta/this.speed;
     }
 }
