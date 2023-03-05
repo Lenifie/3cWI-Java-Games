@@ -7,6 +7,8 @@ public class Rectangle implements Actor{
     private float x;
     private float y;
     private  float speed;
+
+
     public enum Direction{Left,Right};
     private Direction direction;
 
@@ -24,12 +26,14 @@ public class Rectangle implements Actor{
 
     public void update(int delta){
         if(this.direction == direction.Left){
-            this.x -= (float)delta/2.0;
-
+            this.x -= (float)delta/speed;
+            if(this.x <0){
+                this.x = 800;
+            }
         }else {
             this.x += (float)delta/this.speed;
-            if(this.x>0){
-                this.x = 800;
+            if(this.x>800){
+                this.x = 0;
             }
         }
 

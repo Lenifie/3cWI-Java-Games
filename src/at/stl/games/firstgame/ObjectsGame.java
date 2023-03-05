@@ -24,7 +24,7 @@ public class ObjectsGame extends BasicGame {
 
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
-            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), Rectangle.Direction.Left);
+            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50),Rectangle.Direction.Right);
             actors.add(rectangle);
         }
 
