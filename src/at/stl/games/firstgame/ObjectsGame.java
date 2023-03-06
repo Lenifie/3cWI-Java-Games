@@ -37,6 +37,7 @@ public class ObjectsGame extends BasicGame {
             Ellipse ellipse = new Ellipse(random.nextInt(800),random.nextInt(600));
             this.actors.add(ellipse);
         }
+
     }
 
     @Override
@@ -52,6 +53,8 @@ public class ObjectsGame extends BasicGame {
         for (Actor actor:this.actors) {
             actor.render(graphics);
         }
+
+
     }
 
     public static void main(String[] argv) {
