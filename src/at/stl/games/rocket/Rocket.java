@@ -5,6 +5,7 @@ import org.newdawn.slick.*;
 public class Rocket implements ActorRocket {
     private Image rocketImage;
     private  float x,y;
+    private float speed;
 
 
     public Rocket() throws SlickException {
@@ -12,6 +13,7 @@ public class Rocket implements ActorRocket {
         this.rocketImage = tmp.getScaledCopy(100,100);
         this.x = 100;
         this.y = 100;
+        this.speed = 1.8f;
     }
 
     @Override
@@ -22,16 +24,27 @@ public class Rocket implements ActorRocket {
     @Override
     public void update(GameContainer gameContainer,int delta) {
         if(gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
-            this.x++;
+
+            if(this.x<705){
+                this.x += (float)delta/this.speed;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_LEFT)){
             this.x--;
+            if(this.x <0){
+                this.x = 0;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_UP)){
             this.y--;
+            if(this.y<0){
+                this.y = 0;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_DOWN)){
-            this.y++;
+            if(this.y<600-100){
+                this.y += (float)delta/this.speed;
+            }
         }
 
     }
