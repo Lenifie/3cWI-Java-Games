@@ -3,12 +3,15 @@ package at.stl.games.tetris;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Color;
 
 public class LineBlock implements Actor{
+    private Color color;
     float x,y;
     float speed;
 
     public LineBlock(){
+        this.color = Color.cyan;
         this.x = 200;
         this.y = 200;
         this.speed = speed;
@@ -37,5 +40,10 @@ public class LineBlock implements Actor{
             this.x = -y;
             this.y = x;
         }
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
     }
 }
