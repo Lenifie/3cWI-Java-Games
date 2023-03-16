@@ -4,10 +4,10 @@ import org.newdawn.slick.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.newdawn.slick.Color;
 public class Main extends BasicGame {
     private List<Actor> actors;
-    private Color color;
+    private LineBlock lineBlock;
+    private GameField gameField;
 
     public Main(String title) {
         super(title);
@@ -16,9 +16,9 @@ public class Main extends BasicGame {
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
-
         RectangleBlock rectangleBlock = new RectangleBlock();
         this.actors.add(rectangleBlock);
+
         LineBlock lineBlock = new LineBlock();
         this.actors.add(lineBlock);
 
@@ -36,6 +36,7 @@ public class Main extends BasicGame {
         for (Actor actor:this.actors) {
             actor.render(graphics);
             graphics.setColor(actor.getColor());
+            gameField.FieldArray();
         }
     }
 

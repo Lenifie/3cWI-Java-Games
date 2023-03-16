@@ -7,14 +7,15 @@ import org.newdawn.slick.Input;
 
 public class RectangleBlock implements Actor{
     private Color color;
-    float x,y;
+    float x;
+    float y;
     float speed;
 
     public RectangleBlock(){
         this.color = Color.cyan;
         this.x = 100;
         this.y = 100;
-        this.speed = speed;
+        this.speed = 35;
     }
 
 
@@ -25,20 +26,25 @@ public class RectangleBlock implements Actor{
 
     @Override
     public void update(GameContainer gameContainer, int delta) {
+        this.y += (float)delta/speed;
         if(gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
-
-            this.x++;
+            if(this.x<515){
+                this.x += (float)delta;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_LEFT)){
             this.x--;
-
+            if(this.x <0){
+                this.x = 0;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_SPACE)){
-            this.y++;
+            if(this.y<800-100){
+                this.y += (float)delta;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_UP)){
-            this.x = -y;
-            this.y = x;
+
         }
     }
 

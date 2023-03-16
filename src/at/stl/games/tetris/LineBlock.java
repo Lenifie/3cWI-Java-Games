@@ -1,20 +1,17 @@
 package at.stl.games.tetris;
-
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.Color;
+import org.newdawn.slick.*;
 
 public class LineBlock implements Actor{
     private Color color;
     float x,y;
     float speed;
 
-    public LineBlock(){
-        this.color = Color.cyan;
+    public LineBlock() throws SlickException {
+        this.color = Color.yellow;
         this.x = 200;
         this.y = 200;
-        this.speed = speed;
+        this.speed = 35;
     }
 
 
@@ -25,20 +22,27 @@ public class LineBlock implements Actor{
 
     @Override
     public void update(GameContainer gameContainer, int delta) {
+        this.y += (float)delta/speed;
         if(gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
 
-            this.x++;
+            if(this.x<505){
+                this.x += (float)delta;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_LEFT)){
             this.x--;
+            if(this.x <0){
+                this.x = 0;
+            }
 
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_SPACE)){
-            this.y++;
+            if(this.y<800-100){
+                this.y += (float)delta;
+            }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_UP)){
-            this.x = -y;
-            this.y = x;
+
         }
     }
 
