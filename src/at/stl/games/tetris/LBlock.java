@@ -4,13 +4,14 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class ZBlock implements Actor{
+public class LBlock implements Actor{
+
     private Color color;
     float x;
     float y;
     float speed;
 
-    public ZBlock(){
+    public LBlock(){
         this.color = Color.cyan;
         this.x = 100;
         this.y = 100;

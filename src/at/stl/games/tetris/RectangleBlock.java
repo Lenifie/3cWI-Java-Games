@@ -26,9 +26,11 @@ public class RectangleBlock implements Actor{
 
     @Override
     public void update(GameContainer gameContainer, int delta) {
-        this.y += (float)delta/speed;
+        if(this.y<800-50){
+            this.y += (float)delta/speed;
+        }
         if(gameContainer.getInput().isKeyDown(Input.KEY_RIGHT)){
-            if(this.x<515){
+            if(this.x<560){
                 this.x += (float)delta;
             }
         }
@@ -39,13 +41,14 @@ public class RectangleBlock implements Actor{
             }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_SPACE)){
-            if(this.y<800-100){
+            if(this.y<800-50){
                 this.y += (float)delta;
             }
         }
         if(gameContainer.getInput().isKeyDown(Input.KEY_UP)){
 
         }
+
     }
 
     @Override

@@ -4,18 +4,22 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class GameField implements Actor{
-    int Rows = 16;
-    int Columns = 10;
-    int[][] FieldArray = new int[Rows][Columns];
+public class TBlock implements Actor{
 
+    private Color color;
+    float x;
+    float y;
+    float speed;
 
-
-
-
+    public TBlock(){
+        this.color = Color.cyan;
+        this.x = 100;
+        this.y = 100;
+        this.speed = 35;
+    }
     @Override
     public void render(Graphics graphics) {
-        System.out.println(FieldArray);
+
     }
 
     @Override
@@ -26,8 +30,5 @@ public class GameField implements Actor{
     @Override
     public Color getColor() {
         return null;
-    }
-
-    public void FieldArray() {
     }
 }
