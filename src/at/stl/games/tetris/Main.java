@@ -20,9 +20,9 @@ public class Main extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
 
-        //this.actors.add(new OBlock());
-        //this.actors.add(new IBlock());
-        //this.actors.add(new Blocks(Blocks.TETROMINOS.O));
+        this.actors.add(new OBlock());
+        this.actors.add(new IBlock());
+        this.actors.add(new Blocks(Blocks.TETROMINOS.O));
         this.actors.add(new Blocks(Blocks.TETROMINOS.I));
 
     }

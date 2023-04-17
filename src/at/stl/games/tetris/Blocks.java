@@ -57,7 +57,7 @@ public class Blocks implements Actor{
 
     @Override
     public void render(Graphics graphics) {
-        graphics.fillRect(this.x,this.y,this.width,40);
+        graphics.fillRect(this.x,this.y,width,40);
     }
 
     @Override
