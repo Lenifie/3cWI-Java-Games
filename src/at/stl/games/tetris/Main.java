@@ -1,17 +1,15 @@
 package at.stl.games.tetris;
 
-import at.stl.games.snowworld.Snowflake;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 public class Main extends BasicGame {
     private List<Actor> actors;
-    private LineBlock lineBlock;
-
-
-
+    private OBlock OBlock;
+    private IBlock IBlock;
+    private Blocks blocks;
 
 
     public Main(String title) {
@@ -22,11 +20,10 @@ public class Main extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
 
-        Random random = new Random();
-        for (int i = 0; i < 14; i++) {
-            this.actors.add(new RectangleBlock());
-            this.actors.add(new LineBlock());
-        }
+        //this.actors.add(new OBlock());
+        //this.actors.add(new IBlock());
+        //this.actors.add(new Blocks(Blocks.TETROMINOS.O));
+        this.actors.add(new Blocks(Blocks.TETROMINOS.I));
 
     }
 

@@ -4,12 +4,12 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 
-public class LineBlock implements Actor {
+public class IBlock implements Actor {
     private Color color;
     float x, y;
     float speed;
 
-    public LineBlock() {
+    public IBlock() {
         this.color = Color.yellow;
         this.x = 200;
         this.y = 200;

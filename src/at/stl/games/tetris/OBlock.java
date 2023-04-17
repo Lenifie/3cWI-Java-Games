@@ -5,13 +5,13 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 
-public class RectangleBlock implements Actor{
+public class OBlock implements Actor{
     private Color color;
     float x;
     float y;
     float speed;
 
-    public RectangleBlock(){
+    public OBlock(){
         this.color = Color.cyan;
         this.x = 100;
         this.y = 100;
