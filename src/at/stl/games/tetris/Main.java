@@ -25,6 +25,7 @@ public class Main extends BasicGame {
         this.actors.add(new Blocks(Blocks.TETROMINOS.O));
         this.actors.add(new Blocks(Blocks.TETROMINOS.I));
 
+
     }
 
     @Override
